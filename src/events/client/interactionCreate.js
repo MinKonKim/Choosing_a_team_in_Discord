@@ -1,6 +1,5 @@
 module.exports = {
   name: "interactionCreate",
-  once: true,
   async execute(interaction, client) {
     if (interaction.isChatInputCommand()) {
       const { commands } = client;
@@ -13,9 +12,20 @@ module.exports = {
       } catch (error) {
         console.error(error);
         await interaction.reply({
-          content: `잘못된 명령어 입니다.`,
+          content: `잘못된 명령어 입력함.`,
           ephemeral: true,
         });
+      }
+    } else if (interaction.isButton()) {
+      const { buttons } = client;
+      const { customId } = interaction;
+      const button = buttons.get(customId);
+      if (!button) return new Error("There is no code for this button.");
+
+      try {
+        await button.execute(interaction, client);
+      } catch (error) {
+        console.error(error);
       }
     }
   },

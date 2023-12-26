@@ -1,4 +1,4 @@
-const { readdirSync } = requir("fs");
+const { readdirSync } = require("fs");
 
 module.exports = (client) => {
   client.handleComponents = async () => {
@@ -8,10 +8,12 @@ module.exports = (client) => {
         (file) => file.endsWith(".js")
       );
 
+      const { buttons } = client;
       switch (folder) {
         case "buttons":
           for (const file of componentFiles) {
-            const button = require(`../../components/button/${folder}/${file}`);
+            const button = require(`../../components/${folder}/${file}`);
+            buttons.set(button.data.name, button);
           }
 
           break;

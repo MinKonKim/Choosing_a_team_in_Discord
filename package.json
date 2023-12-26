@@ -1,22 +1,19 @@
 {
-  "name": "bbubbubot",
+  "name": "discord_bot_v14",
   "version": "1.0.0",
-  "description": "옵뿌뿌를 위한 봇",
-  "main": "src/index.js",
+  "description": "",
+  "main": "src/bot.js",
   "scripts": {
-    "start": "node .",
     "test": "node ."
   },
-  "author": "minkonkim",
+  "keywords": [],
+  "author": "minkon kim",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/rest": "^1.0.0",
+    "@discordjs/rest": "^2.2.0",
     "chalk": "^4.1.2",
-    "discord-api-types": "0.37.66",
+    "discord-api-types": "^0.37.66",
     "discord.js": "^14.14.1",
-    "mongodb": "^6.3.0",
-    "dotenv": "16.0.1"
-  },
-  "devDependencies": {},
-  "keywords": []
+    "dotenv": "^16.3.1"
+  }
 }

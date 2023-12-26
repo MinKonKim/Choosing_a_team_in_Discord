@@ -17,7 +17,12 @@ module.exports = (client) => {
           }
 
           break;
-
+        case "selectMenus":
+          for (const file of componentFiles) {
+            const menu = require(`../../components/${folder}/${file}`);
+            selectMenues.set(menu.data.name, menu);
+          }
+          break;
         default:
           break;
       }

@@ -14,6 +14,8 @@ module.exports = {
     const menu = new StringSelectMenuBuilder()
       .setCustomId(`sub-menu`)
       .setPlaceholder("Make a selection!")
+      .setMinValues(1)
+      .setMaxValues(1)
       .addOptions(
         new StringSelectMenuOptionBuilder()
           .setLabel("Bulbasaur")

@@ -67,6 +67,11 @@ module.exports = {
       const { commandName } = interaction;
       const command = commands.get(commandName);
       if (!command) return;
+      try {
+        await command.autocomplete(interaction, client);
+      } catch (err) {
+        console.err(error);
+      }
     }
   },
 };

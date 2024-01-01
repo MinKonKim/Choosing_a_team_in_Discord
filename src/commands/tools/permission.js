@@ -29,7 +29,7 @@ module.exports = {
       });
 
       await roles.remove(role).catch(console.error);
-      await interaction.reply({
+      await interaction.editReply({
         content: `Removed: ${role.name} role from you`,
       });
     } else {
@@ -40,7 +40,7 @@ module.exports = {
 
     await roles.add(testRole).catch(console.error);
     await testRole
-      .setPermission([PermissionsBitField.Flags.BanMembers])
+      .setPermissions([PermissionsBitField.Flags.BanMembers])
       .catch(console.error);
 
     const channel = await interaction.guild.channels.create({

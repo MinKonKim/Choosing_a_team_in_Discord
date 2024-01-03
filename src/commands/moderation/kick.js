@@ -26,5 +26,9 @@ module.exports = {
     if (!reason) reason = "No reason provided.";
 
     await member.kick(reason).catch(console.error);
+
+    await interaction.reply({
+      content: `Kicked ${user.tag} successfully!`,
+    });
   },
 };

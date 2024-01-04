@@ -5,6 +5,6 @@ module.exports = {
     setInterval(client.pickPresence, 10 * 1000);
     console.log(`${client.user.tag} has logged into Discord!`);
 
-    setTimeout(client.checkVideo, 5 * 1000);
+    // setTimeout(client.checkVideo, 5 * 1000);
   },
 };
